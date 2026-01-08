@@ -1,0 +1,21 @@
+To integrate with your backend:
+Replace the handleSubmit function with an API call:
+javascriptconst handleSubmit = async () => {
+  if (validateForm()) {
+    try {
+      const response = await fetch('YOUR_BACKEND_URL/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      const data = await response.json();
+      if (data.success) {
+        setIsAuthenticated(true);
+        // Store token in memory or pass to parent component
+      }
+    } catch (error) {
+      console.error('Auth error:', error);
+    }
+  }
+};
