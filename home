@@ -1,0 +1,89 @@
+import React from "react";
+import { Car, MapPin, Clock, Bike } from "lucide-react";
+
+const HomePage = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
+      
+      {/* Header */}
+      <header className="flex items-center justify-between bg-white p-4 rounded-xl shadow-md mb-6">
+        <div className="flex items-center gap-2">
+          <Car className="text-indigo-600 w-8 h-8" />
+          <h1 className="text-2xl font-bold text-gray-800">ParkBy</h1>
+        </div>
+        <button className="text-sm bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+          Logout
+        </button>
+      </header>
+
+      {/* Welcome Section */}
+      <section className="bg-white rounded-xl shadow-md p-6 mb-6">
+        <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          Welcome 👋
+        </h2>
+        <p className="text-gray-600">
+          Find and book parking near your current location easily.
+        </p>
+      </section>
+
+      {/* Actions */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        {/* Car Parking */}
+        <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+          <div className="flex items-center gap-3 mb-3">
+            <Car className="text-indigo-600 w-6 h-6" />
+            <h3 className="text-lg font-semibold text-gray-800">
+              Car Parking
+            </h3>
+          </div>
+          <p className="text-gray-600 mb-4">
+            Check available car parking slots near you.
+          </p>
+          <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">
+            Find Car Parking
+          </button>
+        </div>
+
+        {/* Bike Parking */}
+        <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+          <div className="flex items-center gap-3 mb-3">
+            <Bike className="text-indigo-600 w-6 h-6" />
+            <h3 className="text-lg font-semibold text-gray-800">
+              Bike Parking
+            </h3>
+          </div>
+          <p className="text-gray-600 mb-4">
+            Find nearby bike parking spots instantly.
+          </p>
+          <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">
+            Find Bike Parking
+          </button>
+        </div>
+
+      </section>
+
+      {/* Info Section */}
+      <section className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div className="bg-white p-4 rounded-xl shadow-md text-center">
+          <MapPin className="mx-auto text-indigo-600 mb-2" />
+          <p className="text-gray-700 font-medium">Location Based</p>
+        </div>
+
+        <div className="bg-white p-4 rounded-xl shadow-md text-center">
+          <Clock className="mx-auto text-indigo-600 mb-2" />
+          <p className="text-gray-700 font-medium">1-Hour Slot Booking</p>
+        </div>
+
+        <div className="bg-white p-4 rounded-xl shadow-md text-center">
+          <Car className="mx-auto text-indigo-600 mb-2" />
+          <p className="text-gray-700 font-medium">Car & Bike Support</p>
+        </div>
+
+      </section>
+    </div>
+  );
+};
+
+export default HomePage;
